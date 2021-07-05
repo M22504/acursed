@@ -21,7 +21,6 @@ monogatari.action ('particles').particles ({
 
 // Define the canvas objects used in the game
 monogatari.action ('canvas').objects ({
-
 });
 
 // Credits of the people involved in the creation of this awesome game
@@ -37,7 +36,7 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-
+	'synthetic':'synthetic.mp3'
 });
 
 // Define the voice files used in the game.
@@ -52,12 +51,12 @@ monogatari.assets ('sounds', {
 
 // Define the videos used in the game.
 monogatari.assets ('videos', {
-
+	'esophagation': 'esophagation.mp4',
 });
 
 // Define the images used in the game.
 monogatari.assets ('images', {
-
+	'hand-spiral': 'hand_spiral.gif'
 });
 
 // Define the backgrounds for each scene.
@@ -126,6 +125,7 @@ function stat (stat, value) {
 monogatari.script ({
 	// The game starts here.
 	'Start': [
+		// "show image hand-spiral",
 		{
 			"Function": {
 				"Apply": function(){
@@ -143,7 +143,7 @@ monogatari.script ({
 			'Input': {
 				'Text': 'What will be your online username?',
 				'Validation': function (input) {
-					return input.trim ().length > 0;
+					return input.trim().length > 0;
 				},
 				'Save': function (input) {
 					monogatari.storage ({
@@ -182,16 +182,19 @@ monogatari.script ({
 					'Text': 'Play Video Games',
 					'Do': 'jump Vidya'
 				},
+				'Video': {
+					'Text': 'Stream the tube',
+					'Do': 'jump Video'
+				},
 				'Twitter': {
 					'Text': 'Browse Twitter',
 					'Do': 'jump Twit'
-				}
+				},
 			}
 		}
 	],
-
 	'Vidya': [
-		'n Wow! You really are a degenerate huh?',
+		'n "Idle hands are the devil\'s plaything" you proclaim as you boot up your computer. You feel a tinge of guilt for not running the errands Mom asked you to.',
 		{
 			"Function": {
 				"Apply": function(){
@@ -204,20 +207,38 @@ monogatari.script ({
 				}
 			}
 		},
-		'n You boot up your computer and open Steam.',
 		'end'
 	],
-
+	'Video': [
+		"n You decide to idly browse some videos. You often enjoy the DIY-aesthetic embodied by channels of small time content-creators and independent journalists.",
+		"n You take pride in stumbling upon oddities that would never see the light of day on mainstream media outlets. You'd even call yourself a connoisseur in esoteric media.",
+		"n You find a strange looking video entitled 'ESOPHAGATION.AVI'",
+		"n You pull the blinders.",
+		'show video esophagation fullscreen',
+		"n What a hack.",
+		{
+			"Function": {
+				"Apply": function(){
+					stat("social_credit_score", 50);
+					return true;
+				},
+				"Reverse": function(){
+					stat("social_credit_score", 50);
+					return true;
+				}
+			}
+		},
+		"jump Start"
+	],
 	'Twit': [
 		'n You open Twitter on your phone and begin mindlessly scrolling',
 		'next',
 		'show image twitter1.png at bottom with fadeIn',
 		'n You scroll for a bit before encountering a post which catches your eye',
 		'show background simp with fadeIn',
-		'p Oh, look at this guy.',
+		'p What\'s this guy\'s problem?',
 		'show character simp normal at left with slideInLeft end-fadeOut',
-		'simp \"Just donated $300 dollars to @pokimane on her stream just now and she didn\'t read out my Twitch username. Honestly baffled and saddened.\"',
-		'p Wow, seriously?',
+		'simp \"Just donated $300 dollars to @pokimane on her stream just now and she didn\'t read out my Twitch username. Thought I had a nice thing going along too.\"',
 		{
 			'Choice': {
 				'Dialog': 'n How should you respond?',
@@ -242,13 +263,18 @@ monogatari.script ({
 	],
 	'Simp1A': [
 		'show character simp mald at left with bounceIn end-fadeOut',
-		'simp \"@{{player.name}} I don\'t get it. If your a single male and nice to a female, your automatically a simp',
+		"simp \"@{{player.name}} If exercising basic courtesy to a female makes you a simp, then yeah, I'm a simp\"",
 		'show character simp mald2 at left with headShake end-fadeOut',
-		'simp \"however if you already have a girlfriend, but do the exact same thing, you\'re therefore exempt from the simp title',
-		'show character simp mald3 at left with shakeY end-fadeOut',
-		'simp \"Why do people keep labelling me a simp for being nice to people',
+		'simp \"But of course if you already have a girlfriend, you\'re therefore exempt from the simp title\"',
+		'show character simp mald3 at left with shakeY end-fadeOut\"',
+		'simp \"Why do people keep labelling me a simp for being nice to people\"',
 		'show character simp mald4 at left with wobble end-fadeOut',
-		'simp \"Its general decency to be nice to people\"',
+		'simp \"Its general decency to stand for what one deserves. I do not wish to pick a fight, but it seems you are ' +
+		'mistaken on the nuances of this conundrum. In fact, I don\'t know where this aggression is coming from, i\'d like to implore you ' +
+		'to understand my position. Similar to how doctors and pharma in general generate money for the goods and services they provide, there\'s the implicit ' +
+		'expectation that the streamer should give back to their fans who landed them that far ahead by giving them their due gratitude. It\'s this exploitation ' +
+		'of viewers is what\'s ruining the community. I miss the good old days when streamers stood up to their fans.' +
+		'I really just want everyone to do want everyone to get along.\"',
 		'p Oh dear, it appears I may have hurt his feelings.',
 		{
 			'Choice': {
@@ -262,7 +288,7 @@ monogatari.script ({
 					'Do': 'jump Simp2B'
 				},
 				'Simp1C': {
-					'Text': '\"Imagine being such a miserably troglodyte, wasting away spending your time oggling women who make a living flaunting their beings on the internet, who leech of individuals like you who shamelessly leech off those around you to fund your unhealthy addictions. Sad!\"',
+					'Text': '\"Imagine being such a miserably troglodyte, wasting away spending your time ogling who make a living flaunting their beings on the internet, who leech of individuals like you who shamelessly leech off those around you to fund your unhealthy addictions. Sad!\"',
 					'Do': 'jump Simp2C'
 				},
 				'Simp1D': {
@@ -274,9 +300,9 @@ monogatari.script ({
 	],
 	'Simp1B': [
 		'show character simp sad at left with bounceIn end-fadeOut',
-		'simp \"@{{player.name}} im literally sitting here on the verge of tears',
+		'simp \"@{{player.name}} im literally sitting here on the verge of tears\"',
 		'show character simp sad2 at left with bounceIn end-fadeOut',
-		'simp \"slaving away in this dead end job saving up for the end of the month splash ',
+		'simp \"slaving away in this dead end job saving up for the end of the month splash\"',
 		'show character simp sad3 at left with shakeX end-fadeOut',
 		'simp \"maybe i shouldve done that overtime, if i could get her tha moeny earlier i might have been able to convince her in the dono message\"',
 		'p Yikes, that took a turn',
@@ -300,7 +326,7 @@ monogatari.script ({
 	],
 	'Simp1C': [
 		'hide character simp with slideOutLeft',
-		'n What, did you expect your casual misogyny to be deemed socially acceptable as you provided a man with a false sense of comfort?',
+		'n Did you expect your casual misogyny to be deemed socially acceptable as you provided a man with a false sense of comfort?',
 		'n It appears your social credit score has gone down from that interaction.',
 		{
 			"Function": {
@@ -427,10 +453,6 @@ monogatari.script ({
 				'Simp1A': {
 					'Text': '"@i_hv_3_kids_in_my_bsmnt I agree fully! @evelynski Get utterly destroyed by facts and logic, they don\'t care about your feelings."',
 					'Do': 'jump AV1A'
-				},
-				'Simp1B': {
-					'Text': '"@i_hv_3_kids_in_my_bsmnt although your opinion may be correct, I feel like your tone of speech and general demeanour was wholly inappropriate.  @evelynski please seek a proper education."',
-					'Do': 'jump AV1B'
 				},
 				'Simp1C': {
 					'Text': '\"Chin up, pals before gals.\"',
