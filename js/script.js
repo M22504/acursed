@@ -1,12 +1,13 @@
+
 /* global monogatari */
 
 // Define the messages used in the game.
 monogatari.action ('message').messages ({
 	'Intro':{
-        title: 'Placeholder Title',
-        subtitle: '',
-        body:'Please use Menti to allow students to vote for their options of choice.'
-    }
+		title: 'Placeholder Title',
+		subtitle: '',
+		body:'Please use Menti to allow students to vote for their options of choice.'
+	}
 });
 
 // Define the notifications used in the game
@@ -21,6 +22,7 @@ monogatari.action ('particles').particles ({
 
 // Define the canvas objects used in the game
 monogatari.action ('canvas').objects ({
+
 });
 
 // Credits of the people involved in the creation of this awesome game
@@ -36,7 +38,7 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-	'synthetic':'synthetic.mp3'
+
 });
 
 // Define the voice files used in the game.
@@ -51,12 +53,12 @@ monogatari.assets ('sounds', {
 
 // Define the videos used in the game.
 monogatari.assets ('videos', {
-	'esophagation': 'esophagation.mp4',
+
 });
 
 // Define the images used in the game.
 monogatari.assets ('images', {
-	'hand-spiral': 'hand_spiral.gif'
+
 });
 
 // Define the backgrounds for each scene.
@@ -82,7 +84,7 @@ monogatari.characters ({
 		color: '#cc0000'
 	},
 	'simp': {
-		name: '@UNBEHOLDEN2NONE',
+		name: '@__sad.and.lonely__',
 		color: '#3366ff',
 		directory: 'simp',
 		sprites: {
@@ -99,7 +101,7 @@ monogatari.characters ({
 		}
 	},
 	'v' : {
-		name: '@Vaudeville_Margarine',
+		name: '@i_hv_3_kids_in_my_bsmnt',
 		color: '#9933ff',
 		directory: 'vaxxer',
 		sprites: {
@@ -113,19 +115,25 @@ monogatari.characters ({
 		sprites: {
 			normal: "antivaxxer.png"
 		}
+	},
+	'nipah' : {
+		name: '???',
+		color: '#ffffff',
+	},
+	'br' : {
+		name: 'Bruce',
+		color: '#0e0e0e',
 	}
-
 });
 
 function stat (stat, value) {
-    monogatari.storage('player').stats[stat] += value;
-    $_(`[data-stat="${stat}"]`).value ( monogatari.storage('player').stats[stat]);
+	monogatari.storage('player').stats[stat] += value;
+	$_(`[data-stat="${stat}"]`).value ( monogatari.storage('player').stats[stat]);
 }
 
 monogatari.script ({
 	// The game starts here.
 	'Start': [
-		// "show image hand-spiral",
 		{
 			"Function": {
 				"Apply": function(){
@@ -143,7 +151,7 @@ monogatari.script ({
 			'Input': {
 				'Text': 'What will be your online username?',
 				'Validation': function (input) {
-					return input.trim().length > 0;
+					return input.trim ().length > 0;
 				},
 				'Save': function (input) {
 					monogatari.storage ({
@@ -182,19 +190,24 @@ monogatari.script ({
 					'Text': 'Play Video Games',
 					'Do': 'jump Vidya'
 				},
-				'Video': {
-					'Text': 'Stream the tube',
-					'Do': 'jump Video'
-				},
 				'Twitter': {
 					'Text': 'Browse Twitter',
 					'Do': 'jump Twit'
 				},
+				'Video': {
+					'Text': 'Stream the Tube',
+					'Do': 'jump Video'
+				},
+				'CruiseControl': {
+					'Text': 'test',
+					'Do': 'jump CruiseControl',
+				}
 			}
 		}
 	],
+
 	'Vidya': [
-		'n "Idle hands are the devil\'s plaything" you proclaim as you boot up your computer. You feel a tinge of guilt for not running the errands Mom asked you to.',
+		'n Wow! You really are a degenerate huh?',
 		{
 			"Function": {
 				"Apply": function(){
@@ -207,6 +220,7 @@ monogatari.script ({
 				}
 			}
 		},
+		'n You boot up your computer and open Steam.',
 		'end'
 	],
 	'Video': [
@@ -230,15 +244,17 @@ monogatari.script ({
 		},
 		"jump Start"
 	],
+
 	'Twit': [
 		'n You open Twitter on your phone and begin mindlessly scrolling',
 		'next',
 		'show image twitter1.png at bottom with fadeIn',
 		'n You scroll for a bit before encountering a post which catches your eye',
 		'show background simp with fadeIn',
-		'p What\'s this guy\'s problem?',
+		'p Oh, look at this guy.',
 		'show character simp normal at left with slideInLeft end-fadeOut',
-		'simp \"Just donated $300 dollars to @pokimane on her stream just now and she didn\'t read out my Twitch username. Thought I had a nice thing going along too.\"',
+		'simp \"Just donated $300 dollars to @pokimane on her stream just now and she didn\'t read out my Twitch username. Honestly baffled and saddened.\"',
+		'p Wow, seriously?',
 		{
 			'Choice': {
 				'Dialog': 'n How should you respond?',
@@ -261,6 +277,10 @@ monogatari.script ({
 			}
 		}
 	],
+	'' : [
+
+	],
+
 	'Simp1A': [
 		'show character simp mald at left with bounceIn end-fadeOut',
 		"simp \"@{{player.name}} If exercising basic courtesy to a female makes you a simp, then yeah, I'm a simp\"",
@@ -288,7 +308,7 @@ monogatari.script ({
 					'Do': 'jump Simp2B'
 				},
 				'Simp1C': {
-					'Text': '\"Imagine being such a miserably troglodyte, wasting away spending your time ogling who make a living flaunting their beings on the internet, who leech of individuals like you who shamelessly leech off those around you to fund your unhealthy addictions. Sad!\"',
+					'Text': '\"Imagine being such a miserably troglodyte, wasting away spending your time oggling women who make a living flaunting their beings on the internet, who leech of individuals like you who shamelessly leech off those around you to fund your unhealthy addictions. Sad!\"',
 					'Do': 'jump Simp2C'
 				},
 				'Simp1D': {
@@ -300,9 +320,9 @@ monogatari.script ({
 	],
 	'Simp1B': [
 		'show character simp sad at left with bounceIn end-fadeOut',
-		'simp \"@{{player.name}} im literally sitting here on the verge of tears\"',
+		'simp \"@{{player.name}} im literally sitting here on the verge of tears',
 		'show character simp sad2 at left with bounceIn end-fadeOut',
-		'simp \"slaving away in this dead end job saving up for the end of the month splash\"',
+		'simp \"slaving away in this dead end job saving up for the end of the month splash ',
 		'show character simp sad3 at left with shakeX end-fadeOut',
 		'simp \"maybe i shouldve done that overtime, if i could get her tha moeny earlier i might have been able to convince her in the dono message\"',
 		'p Yikes, that took a turn',
@@ -326,7 +346,7 @@ monogatari.script ({
 	],
 	'Simp1C': [
 		'hide character simp with slideOutLeft',
-		'n Did you expect your casual misogyny to be deemed socially acceptable as you provided a man with a false sense of comfort?',
+		'n What, did you expect your casual misogyny to be deemed socially acceptable as you provided a man with a false sense of comfort?',
 		'n It appears your social credit score has gone down from that interaction.',
 		{
 			"Function": {
@@ -454,6 +474,10 @@ monogatari.script ({
 					'Text': '"@i_hv_3_kids_in_my_bsmnt I agree fully! @evelynski Get utterly destroyed by facts and logic, they don\'t care about your feelings."',
 					'Do': 'jump AV1A'
 				},
+				'Simp1B': {
+					'Text': '"@i_hv_3_kids_in_my_bsmnt although your opinion may be correct, I feel like your tone of speech and general demeanour was wholly inappropriate.  @evelynski please seek a proper education."',
+					'Do': 'jump AV1B'
+				},
 				'Simp1C': {
 					'Text': '\"Chin up, pals before gals.\"',
 					'Do': 'jump Simp2D'
@@ -465,5 +489,85 @@ monogatari.script ({
 		'n I feel like the attached images of Ben Shapiro were very unnecessary.',
 		'av @{{player.name}} @i_hv_3_kids_in_my_bsmnt Look at you government shills, promoting these falsehoods. So disrespectful too!',
 		'av This only solidifies that the #vaccine is turning our people into mindless zombies that the government can control to make more of them, just like Alex Jones said!'
+	],
+	'CruiseControl': [
+		'n With the recent devestation caused by the Los Alamos Tsunami crisis, you browse the twitter feeds of the celebrities to gauge whether they are sorry enough for the victims.',
+		'n You find that Tom Cruise vowed to shave his head to show solidarity.',
+		"p \"I've always liked the Mission Impossible 1, 2, 3, 4, 5 and 7, though they are really starting to milk the franchise.\" ",
+		"n Spersed within his tweets of prayers and salisbury steaks, were strange landscapes supposedly from his pilgrimage to the Ethiopian alps. He preaches about the power Scientology grants to its followers.",
+		"n You feel a chill crawling down your back. You pull the blinders.",
+		"p \"This is Scientology? Scientology will make me be in control?\" you mutter to yourself.",
+		"n An itch crawls up your throat, with the insatiable urge to tear it off.",
+		"n But then a bright irradiance enveloped the room, and you hear a soft voice incessantly apologising.",
+		"nipah \"I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry.\"",
+		"nipah \"It's my fault.\"",
+		"p \"When I accidentally stepped on that stray's tail?\" ",
+		"nipah \"It's my fault.\"",
+		"p \"When I left my toilet seat up and Mom got really mad?\" ",
+		"nipah \"It's my fault.\"",
+		"p When Kennedy was shot despite being covered for by the well-trained well-armed American's finest Kennedy Motorcade?",
+		"nipah \"That was the work of CIA\"",
+		"nipah \"You wouldn't be here, huddled in this crawl space toiling away in front your screens. You could be a part of something greater than yourself. Come on now, young disciple. \"",
+		{
+			'Choice': {
+				'Dialog': 'n Will you accept the responsiblity bestowed upon your existance, and become indoctrinated with one of them?',
+				'Simp1B': {
+					'Text': '',
+					'Do': 'jump evisceration'
+				},
+				'Simp1C': {
+					'Text': '"Do not let yourself get consumed by radicalisation attempts through online interactions."',
+					'Do': 'jump Simp2D'
+				}
+			}
+		}
+	],
+	'evisceration': [
+		'nipah \"Well done. You must take the first step on your rite of passage.\"',
+		'p \"I will show my commitment\"',
+		'nipah \"You know what you must do, don\'t you?\"'
+		'end'
+	],
+	'goodEnd': [
+		'p \"Big giant magical orb, I will not let myself be suaded by your words. If you are the salvation I seek then be it so that I refute your offerings for the salvation I seek is not of forgiveness but atonement, where I am not bound by the sins I shlep but rather chased the objects of my torment to a brisk walk."',
+		'nipah \"Very well, but you must prepare for the consequences. 20 more \'Mission Impossible\'s featuring Sally Struthers from Full House with the lead role.\"',
+		'p \"I thought she was dead.\"',
+		'nipah \"She is, the living dead.\"',
+		'jump start',
+		'end'
+	],
+	'cromartie': [
+		'n You check your MySpace',
+		'n As a wolf of Myspace investment banking, where you would do anything to keep yourself at the top of your game of building your social capital, you often peruse the feeds of your peers to determine the ideal time to piggyback on their boosts in online popularity.',
+		'n They say you can only have 150 real friends but you have proven that the power of \'friendship\' you wield can fell a small nation'
+		'n You are no stranger to the concept of bidding your likes, follows and shares low and winning big.',
+		'p \"Wendy is having her appendix pulled out? Totally uncool, looks like someone\'s stock is plummeting; Unfollow.\"',
+		'p \"Extrapolating from his recent musings on racecar beds and action figures, his recent move here and his dental samples after his yearly checkup, I can triangulate the places his parents have been to in the past 8 days and learnt that besides his father having a crippling addiction to castella cakes, he is going to have his 26th birthday at the Cheeser\'s at Madison avenue from 2pm to 4pm on a saturday because his mother\'s was called in by Wendy to cover for her shift because she was trying to get back at her for leaving early and making Tamatha do all the work. But really if Carlos hadn\'t been so sympathetic towards Abby then he would have cleared it up with Tamatha for her, but maybe Tamatha was just jumping on any chance to prove to Carlos that she had her own deal of troubles because she just doesn\'t understand that the group dynamics of her profession because really she has been volatile since the day she picked up work.',
+		'p " \'Congrats Noel, remember to lay off the cream puffs on your special day!\' I posted as I tagged him, believeing that it would be an effective way to boost my \'conscientious friend\' factor I meticulously cultivate as part of my persona."',
+		'n Ding!',
+		'n You hear a familiar jingle.',
+		'p \"Clarissa must be thanking me for the character skin I donated earlier during her sick day. I bet she is only being nice to me to make Richard jealous, but should I give her a laid back \'no problemo\' or an unassuming \'No problem\'?\"',
+		'n You find that it is instead an anonymous account with the handle, \'Bruce3434\'. \'Who\'s bruce\' You ask yourself.',
+		'p \"Who\'s bruce?"',
+		'br \"Today, you."',
+		'n \"You quiver in your worn christmas jammies. \'What does it mean\' you reckon"',
+		'p \"What does that mean?"',
+		'n \"You log off for a while, to gather your bearings."',
+		'n \"The next day, you groggily pick up your phone to check for any fluctuations in your MSV (MySpace Social value)"',
+		'n \"You are greeted with 80 pings, in several delectable varieties of',
+		'n "Is this for real, dude?\'',
+		'n \'Huh\' ',
+		'n \'Way to go, wise guy.\' ',
+		'n and the limited edition run of ',
+		'n \'You were always a manipulative, unfeeling remora who preys on the courtesy of others, I don\'t hold grudges, but that\'s what I would call too far, dude.\'\"',
+		'n On your feed, you find a single new post, a nauseating flurry of words, topped with a thumbnail of you, far from your finest moment.',
+		'n It was about, no, you couldn\'t believe it yourself, but it was true, you did it. That was a dark period of your life and you thought managed to get off scot-free, but now everyone knows. Something so unutterable you hoped you\'d take it the grave with a sheepish smile, but now everyone knows. What if you family finds out, your little brother, the school?',
+		'n But you can\'t blame Bruce, can you? For you never thought that you should be forgived for what you had done. '
+
+	],
+	'dolls': [
+		'p "I\'ll just blow over and they will forget all about it. I really was hoping to build enough points with Mike to get invited to his bar mitzvah."'
+		'n But it did not just blow over. Several months passed and for the audience we have secured the rights to a pulled episode of Funny Home Videos',
+		'n ',
 	]
 });
