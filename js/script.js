@@ -525,7 +525,7 @@ monogatari.script ({
 	'evisceration': [
 		'nipah \"Well done. You must take the first step on your rite of passage.\"',
 		'p \"I will show my commitment\"',
-		'nipah \"You know what you must do, don\'t you?\"'
+		'nipah \"You know what you must do, don\'t you?\"',
 		'end'
 	],
 	'goodEnd': [
@@ -539,7 +539,7 @@ monogatari.script ({
 	'cromartie': [
 		'n You check your MySpace',
 		'n As a wolf of Myspace investment banking, where you would do anything to keep yourself at the top of your game of building your social capital, you often peruse the feeds of your peers to determine the ideal time to piggyback on their boosts in online popularity.',
-		'n They say you can only have 150 real friends but you have proven that the power of \'friendship\' you wield can fell a small nation'
+		'n They say you can only have 150 real friends but you have proven that the power of \'friendship\' you wield can fell a small nation',
 		'n You are no stranger to the concept of bidding your likes, follows and shares low and winning big.',
 		'p \"Wendy is having her appendix pulled out? Totally uncool, looks like someone\'s stock is plummeting; Unfollow.\"',
 		'p \"Extrapolating from his recent musings on racecar beds and action figures, his recent move here and his dental samples after his yearly checkup, I can triangulate the places his parents have been to in the past 8 days and learnt that besides his father having a crippling addiction to castella cakes, he is going to have his 26th birthday at the Cheeser\'s at Madison avenue from 2pm to 4pm on a saturday because his mother\'s was called in by Wendy to cover for her shift because she was trying to get back at her for leaving early and making Tamatha do all the work. But really if Carlos hadn\'t been so sympathetic towards Abby then he would have cleared it up with Tamatha for her, but maybe Tamatha was just jumping on any chance to prove to Carlos that she had her own deal of troubles because she just doesn\'t understand that the group dynamics of her profession because really she has been volatile since the day she picked up work.',
@@ -566,7 +566,8 @@ monogatari.script ({
 
 	],
 	'dolls': [
-		'p "I\'ll just blow over and they will forget all about it. I really was hoping to build enough points with Mike to get invited to his bar mitzvah."'
+		'p "I\'ll just blow over and they will forget all about it. I really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
+
 		'n But it did not just blow over. Several months passed and for the audience we have secured the rights to a pulled episode of Funny Home Videos',
 		'n ',
 	]
