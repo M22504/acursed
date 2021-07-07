@@ -468,9 +468,9 @@ monogatari.script ({
 		// 'show character simp kalm at left with slideInLeft',
 		'show character av discontenter at left with slideInLeft',
 		'av I don\'t know why the government keeps telling us to get the dangerous COVID-19 #vaccine. I won\'t risk my life or my children\'s life for them to inject microchips into us. They think they can fabricate a disease and fool us? If my children fall sick, I will heal them with essential oils instead.',
-		'show character v normal at right with slideInRight end-fadeOut',
+		'show character v normal at right with slideInRight',
 		'v Not only are you letting yourself and your children potentially die, as an uneducated clown you are also endangering the rest of mankind. People like you should shut their trap and learn how to read a book before sharing your inane opinions to the rest of the world',
-		'n You decide to chip in your opinion. You lose 25 social credit points',
+		'n You decide to chip in your opinion. ',
 		{
 			'Choice': {
 				'Dialog': 'n What do you want to say?',
@@ -489,9 +489,11 @@ monogatari.script ({
 	],
 	'VAX1A': [
 		// 'n I feel like the attached images of Ben Shapiro were very unnecessary.',
-		'show character av discontent at left with slideInLeft end-fadeOut',
+		'hide character v with slideOutRight',
+		'show character av discontent at left with shakeY slideInLeft',
 		'av @{{player.name}} @VaudvilleMargarine Look at you government shills, promoting these falsehoods. So disrespectful too!',
 		'av This only solidifies that the #vaccine is turning our people into mindless zombies that the government can control to make more of them, just like Alex Jones said!',
+		'hide character av with slideOutRight',
 		'n You could have done better',
 		{
 			"Function": {
@@ -508,11 +510,13 @@ monogatari.script ({
 		'jump Tree'
 	],
 	'VAX1B': [
-		'show character v normal at right with slideInRight end-fadeOut',
+		'hide character av',
+		'show character v normal at right with slideInRight',
 		'v "But but if I don\'t voice my condemnation them together with the rest of the rational community, then who will? Doesn\'t silent acquiescence give consent to those rabble-rousers to possibly proliferate their so-called agendas, whether ironically or not?"',
 		'show character av discontent at left with slideInRight end-fadeOut',
 		'av "Who are you calling a haggling Schnauzer!"',
 		'p "Respect for others\' as people should take priority and if you feel that they really spreading dangerous opinions, you should voice your disapproval to the moderators would be willing to take action against their platform being known to host untenable uncompromising views which disrupt public safety."',
+		'show character av discontenter',
 		'jump Tree',
 	],
 	'CruiseControl': [
@@ -529,9 +533,9 @@ monogatari.script ({
 		"nipah \"It's my fault.\"",
 		"p \"When I accidentally stepped on that stray's tail?\" ",
 		"nipah \"It's my fault.\"",
-		"p \"When I left my toilet seat up and Mom got really mad?\" ",
+		"p \"When I left the toilet seat up and Mom got really mad?\" ",
 		"nipah \"It's my fault.\"",
-		"p The recent UAP occurrences?",
+		"p 'The recent UAP sightings?'",
 		"nipah \"No, they're real.\"",
 		"nipah \"But you shouldn't be here my child, huddled in this crawl space toiling away in front your screen. You could be a part of something greater than yourself. Come on now and join Scientology.\"",
 		{
@@ -586,9 +590,9 @@ monogatari.script ({
 		'n \'Way to go, wise guy.\' ',
 		'n and the limited edition run of ',
 		'n \'You were always a manipulative, unfeeling remora who preys on the courtesy of others, I don\'t hold grudges, but that\'s what I would call too far, dude.\'\"',
-		'n On your feed, you find a single new post, a nauseating flurry of words, topped with a thumbnail of you, far from your finest moment.',
+		'n On your feed, you find a single new post, a nauseating flurry of confessions, topped with a thumbnail of you, far from your finest moment.',
 		'n It was about, no, you couldn\'t believe it yourself, but it was true, you did it. That was a dark period of your life and you thought managed to get off scot-free, but now everyone knows. Something so unutterable you hoped you\'d take it the grave with a sheepish smile, but now everyone knows. What if you family finds out, your little brother, the school?',
-		'n But is Bruce to blame? You couldn\'t have ran away forever.',
+		'n But is this \'Bruce3434\' to blame? You couldn\'t have ran away forever.',
 		{
 			'Choice': {
 				'evisceration': {
@@ -603,27 +607,27 @@ monogatari.script ({
 		}
 	],
 	'goldenGirls': [
-		'p "I\'ll just blow over and they will forget all about it. Though, I was really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
-		'n Several months passed you will have access to a never-before-seen pulled episode of Zany Home Videos',
-		'host Welcome back to Zany Home Videos and we got a special entry this time, ladies and gentleman by Timothy from the East Coast. It\'s called \'Boy has tea party with ugly dolls.\'"',
+		'p "It\'ll just blow over and they will forget all about it. Though, I was really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
+		'n After several months had passed, the writers of this documentary have obtained access to a never-before-seen pulled episode of Zany Home Videos.',
+		'host Welcome back to Zany Home Videos and we got a special entry this time, ladies and gentlemen, submitted by Timothy from the East Coast, called \'Boy has tea party with dumb-looking dolls.\'"',
 		'show scene tea_party',
-		'p "Beatrice, you have having way too many egg tarts, you want to Mr. Cuddles to acknowledge you as a fine woman don\'t you? Someone ought to put you on a diet."',
-		'p "Dorothy, I think it is impressive that you are taking your retirement plan into your hands. We ought to stick together from those who look down on us."',
+		'p "Beatrice, you have having way too many egg tarts, you do want Mr. Cuddles to acknowledge you as a fine woman don\'t you? Someone ought to put you on a diet!"',
+		'p "Dorothy, I think it is impressive that you are taking your retirement plan into your own hands. We ought to stick together from those who look down on us."',
 		'p "Would you like some more tea, Sophia?."',
-		'n Crash! A plate mysteriously drops to the ground where whom you call \"Sophia\" sat.',
-		'p "Oh Sophia, you goose! Wa ha ha!"',
-		'p "You guys are the best friends someone like me can ask for"',
+		'n Crash! You tipped a plate onto the ground.',
+		'p "Oh Sophia, you silly goose! Wa ha ha!"',
+		'p "You guys are the best friends a guy can ask for"',
 		'p "kk... heheheh... Ha ha ha ha."',
 		'host Now I heard that\'s how the cookie crumbles, but this is ridiculous!"',
 		'n The audience roars with laughter.',
 		{
 			"Function": {
 				"Apply": function(){
-					stat("social_credit_score", -25);
+					stat("social_credit_score", -50);
 					return true;
 				},
 				"Reverse": function(){
-					stat("social_credit_score", -25);
+					stat("social_credit_score", -50);
 					return true;
 				}
 			}
@@ -631,9 +635,9 @@ monogatari.script ({
 		'jump Tree'
 	],
 	'goodBoy': [
-		'p "I will not let this get this better of me. Since my parents know what I have nothing to hide and they would be on my side."',
-		'n "You release a post apologising for your actions during \'the incident\' and that you wanted moved here to get a fresh start."',
-		'n Afterwards, you decided to take a break from your account till emotions die down and when you can find it in yourself to forgive yourself."',
+		'p "I will not let this get this better of me. Since my parents know what I have done, I have nothing to hide and they would be on my side."',
+		'n You release a post apologising for your actions during \'the incident\' and that you wanted moved here to get a fresh start.',
+		'n Afterwards, you decided to take a break from your account till emotions die down and you can find it in yourself to forgive yourself.',
 		{
 			"Function": {
 				"Apply": function(){
