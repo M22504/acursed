@@ -65,6 +65,7 @@ monogatari.assets ('scenes', {
 	'simp' : 'simp_background.jpg',
 	'antivax' : "antivax_background.jpg",
 	'oyashiro': 'oyashiro.png',
+	'tea_party': 'tea_party.jpg',
 });
 
 
@@ -123,6 +124,14 @@ monogatari.characters ({
 	'br': {
 		name: 'Bruce3434',
 		color: '#ffdf00',
+	},
+	'host': {
+		name: 'Host',
+		color: '#619dff',
+	},
+	'audience': {
+		name: 'Audience',
+		color: '#ffffff'
 	}
 
 });
@@ -320,7 +329,7 @@ monogatari.script ({
 		'show character simp sad2 at left with bounceIn end-fadeOut',
 		'simp \"slaving away in this dead end job saving up for the end of the month splash\"',
 		'show character simp sad3 at left with shakeX end-fadeOut',
-		'simp \"maybe i shouldve done that overtime, if i could get her tha moeny earlier i might have been able to convince her in the dono message\"',
+		'simp \"maybe i should\'ve done that overtime, if i could get her the money earlier i might have been able to convince her in the donation message\"',
 		'p Yikes, that took a turn',
 		{
 			'Choice': {
@@ -431,7 +440,7 @@ monogatari.script ({
 		'n You should\'ve ...',
 		'jump Antivax'
 	], 'Simp2D': [
-		'show character simp kalm at left with slideInLeft',
+		'show character simp kalm at left with slideInLeft slideOutLeft',
 		'simp \"thanks, i feel a little better. the internet isnt that bad after all.\"',
 		'p Welp, I guess that\'s the end of that.',
 		'n It appears your social credit score has gone up from that interaction.',
@@ -456,11 +465,12 @@ monogatari.script ({
 		'n An online discourse piques your interest.',
 		'show background antivax with fadeIn',
 		'p Ouh, what\'s this?',
-		'show character av discontenter at left with slideInLeft end-fadeOut',
+		// 'show character simp kalm at left with slideInLeft',
+		'show character av discontenter at left with slideInLeft',
 		'av I don\'t know why the government keeps telling us to get the dangerous COVID-19 #vaccine. I won\'t risk my life or my children\'s life for them to inject microchips into us. They think they can fabricate a disease and fool us? If my children fall sick, I will heal them with essential oils instead.',
 		'show character v normal at right with slideInRight end-fadeOut',
 		'v Not only are you letting yourself and your children potentially die, as an uneducated clown you are also endangering the rest of mankind. People like you should shut their trap and learn how to read a book before sharing your inane opinions to the rest of the world',
-		'n You decide to chip in your opinion.',
+		'n You decide to chip in your opinion. You lose 25 social credit points',
 		{
 			'Choice': {
 				'Dialog': 'n What do you want to say?',
@@ -473,13 +483,29 @@ monogatari.script ({
 					'Do': 'jump VAX1B'
 				}
 			}
-		}
+		},
+		'n Your current social credit score is now {{player.stats.social_credit_score}}',
+		'jump Tree',
 	],
 	'VAX1A': [
 		// 'n I feel like the attached images of Ben Shapiro were very unnecessary.',
 		'show character av discontent at left with slideInLeft end-fadeOut',
 		'av @{{player.name}} @VaudvilleMargarine Look at you government shills, promoting these falsehoods. So disrespectful too!',
-		'av This only solidifies that the #vaccine is turning our people into mindless zombies that the government can control to make more of them, just like Alex Jones said!'
+		'av This only solidifies that the #vaccine is turning our people into mindless zombies that the government can control to make more of them, just like Alex Jones said!',
+		'n You could have done better',
+		{
+			"Function": {
+				"Apply": function(){
+					stat("social_credit_score", -25);
+					return true;
+				},
+				"Reverse": function(){
+					stat("social_credit_score", -25);
+					return true;
+				}
+			}
+		},
+		'jump Tree'
 	],
 	'VAX1B': [
 		'show character v normal at right with slideInRight end-fadeOut',
@@ -550,11 +576,11 @@ monogatari.script ({
 		'n You find that it is instead an anonymous account with the handle, \'Bruce3434\'. \'Who\'s bruce\' You ask yourself.',
 		'p "Who\'s bruce?"',
 		'br "TODAY, YOU"',
-		'n \"You quiver in your worn christmas jammies. \'What does that mean?\' you reckon"',
+		'n You quiver in your worn christmas jammies. \'What does that mean?\' you reckon',
 		'p \"What does that mean?"',
-		'n \"You log off for a while, to gather your bearings."',
-		'n \"The next day, you groggily pick up your phone to check for any fluctuations in your MSV (MySpace Social value)"',
-		'n \"You are greeted with 80 pings, in several delectable varieties of',
+		'n You log off for a while, to gather your bearings.',
+		'n The next day, you groggily pick up your phone to check for any fluctuations in your MSV (MySpace Social value)',
+		'n You are greeted with 80 pings, in several delectable varieties of',
 		'n "Is this for real, dude?\'',
 		'n \'Huh\' ',
 		'n \'Way to go, wise guy.\' ',
@@ -566,20 +592,59 @@ monogatari.script ({
 		{
 			'Choice': {
 				'evisceration': {
-					'Text': 'Accept the responsibility bestowed upon your existence, and become indoctrinated with one of them',
-					'Do': 'jump evisceration'
+					'Text': 'Tell an adult',
+					'Do': 'jump goodBoy'
 				},
-				'dolls': {
+				'goldenGirls': {
 					'Text': 'Hope it blows over and pretend like nothing has happened',
-					'Do': 'jump dolls'
+					'Do': 'jump goldenGirls'
 				}
 			}
 		}
 	],
-	'dolls': [
+	'goldenGirls': [
 		'p "I\'ll just blow over and they will forget all about it. Though, I was really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
 		'n Several months passed you will have access to a never-before-seen pulled episode of Zany Home Videos',
-		'n ',
-		'n ',
-	]
+		'host Welcome back to Zany Home Videos and we got a special entry this time, ladies and gentleman by Timothy from the East Coast. It\'s called \'Boy has tea party with ugly dolls.\'"',
+		'show scene tea_party',
+		'p "Beatrice, you have having way too many egg tarts, you want to Mr. Cuddles to acknowledge you as a fine woman don\'t you? Someone ought to put you on a diet."',
+		'p "Dorothy, I think it is impressive that you are taking your retirement plan into your hands. We ought to stick together from those who look down on us."',
+		'p "Would you like some more tea, Sophia?."',
+		'n Crash! A plate mysteriously drops to the ground where whom you call \"Sophia\" sat.',
+		'p "Oh Sophia, you goose! Wa ha ha!"',
+		'p "You guys are the best friends someone like me can ask for"',
+		'p "kk... heheheh... Ha ha ha ha."',
+		'host Now I heard that\'s how the cookie crumbles, but this is ridiculous!"',
+		'n The audience roars with laughter.',
+		{
+			"Function": {
+				"Apply": function(){
+					stat("social_credit_score", -25);
+					return true;
+				},
+				"Reverse": function(){
+					stat("social_credit_score", -25);
+					return true;
+				}
+			}
+		},
+		'jump Tree'
+	],
+	'goodBoy': [
+		'p "I will not let this get this better of me. Since my parents know what I have nothing to hide and they would be on my side."',
+		'n "You release a post apologising for your actions during \'the incident\' and that you wanted moved here to get a fresh start."',
+		'n Afterwards, you decided to take a break from your account till emotions die down and when you can find it in yourself to forgive yourself."',
+		{
+			"Function": {
+				"Apply": function(){
+					stat("social_credit_score", 50);
+					return true;
+				},
+				"Reverse": function(){
+					stat("social_credit_score", 50);
+					return true;
+				}
+			}
+		},
+	],
 });
