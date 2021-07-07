@@ -501,8 +501,8 @@ monogatari.script ({
 		"nipah \"It's my fault.\"",
 		"p \"When I left my toilet seat up and Mom got really mad?\" ",
 		"nipah \"It's my fault.\"",
-		"p When Kennedy was shot despite being covered for by the well-trained well-armed American's finest Kennedy Motorcade?",
-		"nipah \"No, that was the work of the CIA.\"",
+		"p The recent UAP occurrences?",
+		"nipah \"No, they're real.\"",
 		"nipah \"But you shouldn't be here my child, huddled in this crawl space toiling away in front your screen. You could be a part of something greater than yourself. Come on now and join Scientology.\"",
 		{
 			'Choice': {
@@ -546,7 +546,7 @@ monogatari.script ({
 		'n You find that it is instead an anonymous account with the handle, \'Bruce3434\'. \'Who\'s bruce\' You ask yourself.',
 		'p \"Who\'s bruce?"',
 		'br \"Today, you."',
-		'n \"You quiver in your worn christmas jammies. \'What does it mean\' you reckon"',
+		'n \"You quiver in your worn christmas jammies. \'What does that mean?\' you reckon"',
 		'p \"What does that mean?"',
 		'n \"You log off for a while, to gather your bearings."',
 		'n \"The next day, you groggily pick up your phone to check for any fluctuations in your MSV (MySpace Social value)"',
