@@ -290,9 +290,9 @@ monogatari.script ({
 		'show character simp mald at left with bounceIn end-fadeOut',
 		"simp \"@{{player.name}} If exercising basic courtesy to a female makes you a simp, then yeah, I'm a simp\"",
 		'show character simp mald2 at left with headShake end-fadeOut',
-		'simp \"But of course if you are able to live the high life of yuppie trust-fund normals, you\'re therefore exempt from the simp title\"',
+		'simp \"But of course if you are able to live the high life of trust-fund yuppies, you\'re therefore exempt from the simp title\"',
 		'show character simp mald3 at left with shakeY end-fadeOut\"',
-		'simp \"Why do people keep labelling me a simp for being nice to people\"',
+		'simp \"Why am I labelled me a simp for being nice to people.\"',
 		'show character simp mald4 at left with wobble end-fadeOut',
 		'simp \"Its general decency to stand for what one deserves. I do not wish to pick a fight, but it seems you are ' +
 		'mistaken on the nuances of this conundrum. In fact, I don\'t know where this aggression is coming from, i\'d like to implore you ' +
@@ -343,7 +343,7 @@ monogatari.script ({
 					'Do': 'jump Simp2D'
 				},
 				'Simp1C': {
-					'Text': '\"Chin up, pals before gals.\"',
+					'Text': '\"Chin up, pals before e-pals.\"',
 					'Do': 'jump Simp2D'
 				}
 			}
