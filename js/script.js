@@ -100,7 +100,7 @@ monogatari.characters ({
 		}
 	},
 	'v' : {
-		name: '@Vaudeville_Margarine',
+		name: '@VaudevilleMargarine',
 		color: '#9933ff',
 		directory: 'vaxxer',
 		sprites: {
@@ -108,11 +108,12 @@ monogatari.characters ({
 		}
 	},
 	'av' : {
-		name: '@evelynski',
+		name: '@hunter2',
 		color: '#006699',
 		directory: 'antivaxxer',
 		sprites: {
-			normal: "antivaxxer.png"
+			discontent: "vax_discontent.png",
+			discontenter: "vax_discontenter.png"
 		}
 	},
 	'nipah': {
@@ -188,10 +189,6 @@ monogatari.script ({
 		{
 			'Choice': {
 				'Dialog': 'n What do you want to do?',
-				'Vidya': {
-					'Text': 'Play Video Games',
-					'Do': 'jump Vidya'
-				},
 				'Video': {
 					'Text': 'Stream the tube',
 					'Do': 'jump Video'
@@ -372,7 +369,7 @@ monogatari.script ({
 		'hide character simp with slideOutLeft',
 		't \"You have received no response from @__sad.and.lonely__\"',
 		'p Welp, I guess that\'s the end of that.',
-		'n How condenscending of you.',
+		'n How condescending of you.',
 		'n It appears your social credit score has gone down from that interaction.',
 		{
 			"Function": {
@@ -388,7 +385,6 @@ monogatari.script ({
 		},
 
 		'n Your current social credit score is now {{player.stats.social_credit_score}}',
-		'n You should\'ve ...',
 		'jump Antivax'
 	],
 	'Simp2B': [
@@ -456,34 +452,42 @@ monogatari.script ({
 		'jump Antivax'
 	],
 	'Antivax': [
-		'n You continue scrolling Twitter, inadequatedly absorbing the near endless stream of information being present to you.',
+		'n You continue scrolling Twitter, inadequately absorbing the near endless stream of information being present to you.',
 		'n An online discourse piques your interest.',
 		'show background antivax with fadeIn',
 		'p Ouh, what\'s this?',
-		'show character av normal at left with slideInLeft end-fadeOut',
+		'show character av discontenter at left with slideInLeft end-fadeOut',
 		'av I don\'t know why the government keeps telling us to get the dangerous COVID-19 #vaccine. I won\'t risk my life or my children\'s life for them to inject microchips into us. They think they can fabricate a disease and fool us? If my children fall sick, I will heal them with essential oils instead.',
 		'show character v normal at right with slideInRight end-fadeOut',
-		'v Not only are you letting yourself and your children potentially die, as an undeducated clown you are also endangering the rest of mankind. People like you should shut their trap and learn how to read a book before sharing your inane opinions to the rest of the world',
-		'p Wow, how shockingly relevant.',
+		'v Not only are you letting yourself and your children potentially die, as an uneducated clown you are also endangering the rest of mankind. People like you should shut their trap and learn how to read a book before sharing your inane opinions to the rest of the world',
 		'n You decide to chip in your opinion.',
 		{
 			'Choice': {
 				'Dialog': 'n What do you want to say?',
-				'Simp1A': {
-					'Text': '"@i_hv_3_kids_in_my_bsmnt I agree fully! @evelynski Get utterly destroyed by facts and logic, they don\'t care about your feelings."',
-					'Do': 'jump AV1A'
+				'Vax1A': {
+					'Text': '"@VaudvilleMargarine I agree fully! @hunter2 Get utterly destroyed by facts and logic, they don\'t care about your feelings."',
+					'Do': 'jump VAX1A'
 				},
-				'Simp1C': {
-					'Text': '\"Chin up, pals before gals.\"',
-					'Do': 'jump Simp2D'
+				'Vax1B': {
+					'Text': '"@VaudvilleMargarine You shouldn\'t give them a platform by entertaining their notions nor should you harrass them."',
+					'Do': 'jump VAX1B'
 				}
 			}
 		}
 	],
-	'AV1A': [
-		'n I feel like the attached images of Ben Shapiro were very unnecessary.',
-		'av @{{player.name}} @i_hv_3_kids_in_my_bsmnt Look at you government shills, promoting these falsehoods. So disrespectful too!',
+	'VAX1A': [
+		// 'n I feel like the attached images of Ben Shapiro were very unnecessary.',
+		'show character av discontent at left with slideInLeft end-fadeOut',
+		'av @{{player.name}} @VaudvilleMargarine Look at you government shills, promoting these falsehoods. So disrespectful too!',
 		'av This only solidifies that the #vaccine is turning our people into mindless zombies that the government can control to make more of them, just like Alex Jones said!'
+	],
+	'VAX1B': [
+		'show character v normal at right with slideInRight end-fadeOut',
+		'v "But but if I don\'t voice my condemnation them together with the rest of the rational community, then who will? Doesn\'t silent acquiescence give consent to those rabble-rousers to possibly proliferate their so-called agendas, whether ironically or not?"',
+		'show character av discontent at left with slideInRight end-fadeOut',
+		'av "Who are you calling a haggling Schnauzer!"',
+		'p "Respect for others\' as people should take priority and if you feel that they really spreading dangerous opinions, you should voice your disapproval to the moderators would be willing to take action against their platform being known to host untenable uncompromising views which disrupt public safety."',
+		'jump Tree',
 	],
 	'CruiseControl': [
 		'n With the recent devastation caused by the Los Alamos Tsunami crisis, you browse the twitter feeds of the celebrities to gauge whether they are sorry enough for the victims.',
@@ -530,22 +534,22 @@ monogatari.script ({
 		'p \"I thought she was dead?\"',
 		'nipah \"She is, the living dead.\"',
 		'p \"This is the worst end!\"',
-		'end',
+		'jump Tree',
 	],
 	'Cromartie': [
 		'n You check your MySpace',
 		'n As a wolf of Myspace investment banking, where you would do anything to keep yourself at the top of your game of building your social capital, you often peruse the feeds of your peers to determine the ideal time to piggyback on their boosts in online popularity.',
 		'n They say you can only have 150 real friends but you have proven that the power of \'friendship\' you wield can fell a small nation',
 		'n You are no stranger to the concept of bidding your likes, follows and shares low and winning big.',
-		'p \"Wendy is having her appendix pulled out? Totally uncool, looks like someone\'s stock is plummeting; Unfollow.\"',
-		'p \"Extrapolating from his recent musings on racecar beds and action figures, his recent move here and his dental samples after his yearly checkup, I can triangulate the places his parents have been to in the past 8 days and learnt that besides his father having a crippling addiction to castella cakes, he is going to have his 26th birthday at the Cheeser\'s at Madison avenue from 2pm to 4pm on a saturday because his mother\'s was called in by Wendy to cover for her shift because she was trying to get back at her for leaving early and making Tabatha do all the work. But really if Carlos hadn\'t been so sympathetic towards Abby then he would have cleared it up with Tabatha for her, but maybe Tabatha was just jumping on any chance to prove to Carlos that she had her own deal of troubles since she just doesn\'t understand that the commitment of her career because really she has been volatile since she had to quit her ballroom lessons.',
+		'p "Wendy is having her appendix pulled out? Totally uncool, looks like someone\'s stock is plummeting; Unfollow."',
+		'p "Extrapolating from his recent musings on racecar beds and action figures, his recent move here and his dental samples after his yearly checkup, I can triangulate the places his parents have been to in the past 8 days and learnt that besides his father having a crippling addiction to castella cakes, he is going to have his 26th birthday at the Cheeser\'s at Madison avenue from 2pm to 4pm on a saturday because his mother\'s was called in by Wendy to cover for her shift because she was trying to get back at her for leaving early and making Tabatha do all the work. But really if Carlos hadn\'t been so sympathetic towards Abby then he would have cleared it up with Tabatha for her, but maybe Tabatha was just jumping on any chance to prove to Carlos that she had her own deal of troubles since she just doesn\'t understand that the commitment of her career because really she has been volatile since she had to quit her ballroom lessons."',
 		'p " \'Congrats Noel, remember to lay off the cream puffs on your special day!\' I posted as I tagged him, believeing that it would be an effective way to boost my \'conscientious friend\' factor I meticulously cultivate as part of my persona."',
 		'n Ding!',
 		'n You hear a familiar jingle.',
-		'p \"Clarissa must be thanking me for the character skin I donated earlier during her sick day. I bet she is only being nice to me to make Richard jealous, but should I give her a laid back \'no problemo\' or an unassuming \'No problem\'?\"',
+		'p "Clarissa must be thanking me for the character skin I donated earlier during her sick day. I bet she is only being nice to me to make Richard jealous, but should I give her a laid back \'no problemo\' or an unassuming \'No problem\'?"',
 		'n You find that it is instead an anonymous account with the handle, \'Bruce3434\'. \'Who\'s bruce\' You ask yourself.',
-		'p \"Who\'s bruce?"',
-		'br \"Today, you."',
+		'p "Who\'s bruce?"',
+		'br "TODAY, YOU"',
 		'n \"You quiver in your worn christmas jammies. \'What does that mean?\' you reckon"',
 		'p \"What does that mean?"',
 		'n \"You log off for a while, to gather your bearings."',
@@ -558,11 +562,24 @@ monogatari.script ({
 		'n \'You were always a manipulative, unfeeling remora who preys on the courtesy of others, I don\'t hold grudges, but that\'s what I would call too far, dude.\'\"',
 		'n On your feed, you find a single new post, a nauseating flurry of words, topped with a thumbnail of you, far from your finest moment.',
 		'n It was about, no, you couldn\'t believe it yourself, but it was true, you did it. That was a dark period of your life and you thought managed to get off scot-free, but now everyone knows. Something so unutterable you hoped you\'d take it the grave with a sheepish smile, but now everyone knows. What if you family finds out, your little brother, the school?',
-		'n But you can\'t blame Bruce, can you? For you never thought that you should be forgived for what you had done.',
+		'n But is Bruce to blame? You couldn\'t have ran away forever.',
+		{
+			'Choice': {
+				'evisceration': {
+					'Text': 'Accept the responsibility bestowed upon your existence, and become indoctrinated with one of them',
+					'Do': 'jump evisceration'
+				},
+				'dolls': {
+					'Text': 'Hope it blows over and pretend like nothing has happened',
+					'Do': 'jump dolls'
+				}
+			}
+		}
 	],
 	'dolls': [
-		'p "I\'ll just blow over and they will forget all about it. I really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
-		'n But it did not just blow over. Several months passed and for the audience we have secured the rights to a pulled episode of Zany Home Videos',
+		'p "I\'ll just blow over and they will forget all about it. Though, I was really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
+		'n Several months passed you will have access to a never-before-seen pulled episode of Zany Home Videos',
+		'n ',
 		'n ',
 	]
 });
