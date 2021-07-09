@@ -525,19 +525,19 @@ monogatari.script ({
 		"p \"I've always liked Mission Impossible 1, 2, 3, 4, 5 and 7, though they really are starting to milk the franchise.\" ",
 		"n Interspersed within his tweets of prayers and salisbury steaks, were strange landscapes supposedly from his pilgrimage to the Ethiopian alps. He preaches about the power Scientology grants to its followers.",
 		"n You feel a chill crawling down your back. You pull the blinders.",
-		"p \"This is Scientology? Scientology will make me have control over my life?\"",
-		"n An itch crawls up your throat, with the insatiable urge to tear it off like a scratch-and-sniff.",
+		"p \"This is Geometrocology? Geometrocology will give me control over my life?\"",
+		"n An itch crawls up your throat, with the insatiable urge to tear it off like a festering blister.",
 		"show scene oyashiro with fadein",
-		"n But then a bright irradiance enveloped the room, and you hear a soft voice incessantly apologising.",
+		"n But then a bright irradiance enveloped the room, removing the pain from your body and you hear a soft voice incessantly apologising.",
 		"nipah \"I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry.\"",
 		"nipah \"It's my fault.\"",
 		"p \"When I accidentally stepped on that stray's tail?\" ",
 		"nipah \"It's my fault.\"",
 		"p \"When I left the toilet seat up and Mom got really mad?\" ",
 		"nipah \"It's my fault.\"",
-		"p 'The recent UAP sightings?'",
+		"p \"The recent UAP sightings?\"",
 		"nipah \"No, they're real.\"",
-		"nipah \"But you shouldn't be here my child, huddled in this crawl space toiling away in front your screen. You could be a part of something greater than yourself. Come on now and join Scientology.\"",
+		"nipah \"But you shouldn't be here my child, huddled in this crawl space toiling away in front your screen. You could be a part of something greater than yourself. Come on now and join Geometrocology.\"",
 		{
 			'Choice': {
 				'evisceration': {
@@ -552,7 +552,7 @@ monogatari.script ({
 		}
 	],
 	'evisceration': [
-		'nipah \"Well done, I knew you would pick the peaceful option. If this were a J-RPG you would have been after my head. You must take the first step on your rite of passage.\"',
+		'nipah \"Well done, I knew my child would pick the peaceful option. If this were a J-RPG, you would have been after my head. But as a sign of your obedience, You must take the first step on your rite of passage.\"',
 		'p \"...\"',
 		'nipah \"You know what you must do, don\'t you?\"',
 		'show video evisceration fullscreen with close controls',
@@ -560,9 +560,9 @@ monogatari.script ({
 	],
 	'goodEnd': [
 		'p \"Giant Magical Orb of Illuminating Virtue, I will not let myself be suaded by your words. If you are the salvation I seek then be it so that I refute your offerings for the salvation I seek is not of forgiveness but atonement, where I am not bound by the sins I shlep but rather chased the objects of my torment to a brisk walk."',
-		'nipah \"Very well, but you must prepare for the consequences. I decree 20 more \'Mission Impossible\'s featuring Sally Struthers from cult family classic Full House with the lead role.\"',
-		'p \"I thought she was dead?\"',
-		'nipah \"She is, the living dead.\"',
+		'nipah \"Very well, but you must prepare for the consequences. I decree 20 more \'Mission Impossible\'s featuring Sally Struthers from cult-classic family sitcom Full House with the lead role.\"',
+		'p \"That has-been, I thought she was dead?\"',
+		'nipah \"She is. The living dead.\"',
 		'p \"This is the worst end!\"',
 		'jump Tree',
 	],
@@ -650,5 +650,6 @@ monogatari.script ({
 				}
 			}
 		},
+		'jump Tree',
 	],
 });
