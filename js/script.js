@@ -238,7 +238,7 @@ monogatari.script ({
 		"n You take pride in stumbling upon oddities that would never see the light of day on mainstream media outlets. You'd even call yourself a connoisseur in esoteric media.",
 		"n You find a strange looking video entitled 'ESOPHAGATION.AVI'",
 		"n You pull the blinders.",
-		'show video esophagation immersive',
+		'show video esophagation fullscreen with close controls',
 		'show scene main_bedroom with fadeIn',
 		"p \"What a hack.\"",
 		{
@@ -555,7 +555,7 @@ monogatari.script ({
 		'nipah \"Well done, I knew you would pick the peaceful option. If this were a J-RPG you would have been after my head. You must take the first step on your rite of passage.\"',
 		'p \"...\"',
 		'nipah \"You know what you must do, don\'t you?\"',
-		'show video evisceration immersive',
+		'show video evisceration fullscreen with close controls',
 		'jump Tree',
 	],
 	'goodEnd': [
