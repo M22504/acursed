@@ -4,7 +4,7 @@
 monogatari.action ('message').messages ({
 	'Intro':{
         subtitle: '',
-        body:'Please use Menti to allow students to vote for their options of choice. You may want to zoom in on your browser to an optimal level and are strongly encouraged to narrate the lines.'
+        body:'Please use Polly to allow students to vote for their options of choice. You may want to zoom in on your browser to an optimal level and are strongly encouraged to narrate the lines.'
     }
 });
 
