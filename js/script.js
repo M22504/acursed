@@ -561,7 +561,7 @@ monogatari.script ({
 	'goodEnd': [
 		'p \"Giant Magical Orb of Illuminating Virtue, I will not let myself be suaded by your words. If you are the salvation I seek then be it so that I refute your offerings for the salvation I seek is not of forgiveness but atonement, where I am not bound by the sins I shlep but rather chased the objects of my torment to a brisk walk."',
 		'nipah \"Very well, but you must prepare for the consequences. I decree 20 more \'Mission Impossible\'s featuring Sally Struthers from cult-classic family sitcom Full House with the lead role.\"',
-		'p \"That has-been, I thought she was dead?\"',
+		'p \"That has-been? I thought she was dead?\"',
 		'nipah \"She is. The living dead.\"',
 		'p \"This is the worst end!\"',
 		'jump Tree',
