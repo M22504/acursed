@@ -533,7 +533,7 @@ monogatari.script ({
 		"nipah \"It's my fault.\"",
 		"p \"When I accidentally stepped on that stray's tail?\" ",
 		"nipah \"It's my fault.\"",
-		"p \"When I left the toilet seat up and Mom got really mad?\" ",
+		"p \"When I left the seat up and Mom got really mad?\" ",
 		"nipah \"It's my fault.\"",
 		"p \"The recent UAP sightings?\"",
 		"nipah \"No, they're real.\"",
