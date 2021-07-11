@@ -691,7 +691,8 @@ monogatari.script ({
 	],
 	'goldenGirls': [
 		'p "It\'ll just blow over and they will forget all about it. Though, I was really was hoping to build enough points with Mike to get invited to his bar mitzvah."',
-		'n After several months had passed, the writers of this documentary have obtained access to a never-before-seen pulled episode of Zany Home Videos.',
+		'n After several months had passed, you spiraled into madness over repressed emotions."',
+		'n The writers of this documentary have obtained access to a never-before-seen pulled episode of Zany Home Videos documenting your descent.',
 		'host Welcome back to Zany Home Videos and we got a special entry this time, ladies and gentlemen, submitted by Timothy from the East Coast, called \'Boy has tea party with dumb-looking dolls.\'"',
 		'show scene tea_party',
 		'p "Beatrice, you have having way too many egg tarts, you do want Mr. Cuddles to acknowledge you as a fine woman don\'t you? Someone ought to put you on a diet!"',
