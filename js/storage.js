@@ -5,7 +5,8 @@ monogatari.storage ({
 	player: {
 		name: '',
 		stats: {
-			"social_credit_score": 50
+			"social_credit_score": 50,
+			"flags": 0
 		}
 	}
 });

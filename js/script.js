@@ -66,6 +66,8 @@ monogatari.assets ('scenes', {
 	'antivax' : "antivax_background.jpg",
 	'oyashiro': 'oyashiro.png',
 	'tea_party': 'tea_party.jpg',
+	'fallout': 'fallout.jpg',
+	'cruisecontrol' : 'cruisecontrol.jpg',
 });
 
 
@@ -132,6 +134,10 @@ monogatari.characters ({
 	'audience': {
 		name: 'Audience',
 		color: '#ffffff'
+	},
+	'cruise' : {
+		name: 'Tom Cruise',
+		color: '#a71adb'
 	}
 
 });
@@ -156,6 +162,18 @@ monogatari.script ({
 				}
 			}
 		},
+		{
+			"Function": {
+				"Apply": function(){
+					$_(`[data-stat="flags"]`).value ( 0);
+					return true;
+				},
+				"Reverse": function(){
+					$_(`[data-stat="flags"]`).value ( 0);
+					return true;
+				}
+			}
+		},
 		'show message Intro',
 		{
 			'Input': {
@@ -168,7 +186,8 @@ monogatari.script ({
 						player: {
 							name: input,
 							stats: {
-								"social_credit_score": 50
+								"social_credit_score": 50,
+								"flags": 0
 							}
 						}
 					});
@@ -180,7 +199,8 @@ monogatari.script ({
 						player: {
 							name: '',
 							stats: {
-								"social_credit_score": 50
+								"social_credit_score": 50,
+								"flags": 0
 							}
 						}
 					});
@@ -213,6 +233,11 @@ monogatari.script ({
 				'Cromartie' : {
 					'Text': 'Check your MySpace',
 					'Do': 'jump Cromartie'
+				},
+				'Ascend' : {
+					'Text': 'Ascend',
+					'Do': 'jump Ascend',
+					'Condition': function () {return this.storage('player').stats['flags'] >= 4}
 				}
 			}
 		}
@@ -237,7 +262,6 @@ monogatari.script ({
 		"n You decide to idly browse some videos. You often enjoy the DIY-aesthetic embodied by channels of small time content-creators and independent journalists.",
 		"n You take pride in stumbling upon oddities that would never see the light of day on mainstream media outlets. You'd even call yourself a connoisseur in esoteric media.",
 		"n You find a strange looking video entitled 'ESOPHAGATION.AVI'",
-		"n You pull the blinders.",
 		'show video esophagation fullscreen with close controls',
 		'show scene main_bedroom with fadeIn',
 		"p \"What a hack.\"",
@@ -249,6 +273,18 @@ monogatari.script ({
 				},
 				"Reverse": function(){
 					stat("social_credit_score", 50);
+					return true;
+				}
+			}
+		},
+		{
+			"Function": {
+				"Apply": function(){
+					stat("flags", 1);
+					return true;
+				},
+				"Reverse": function(){
+					stat("flags", 1);
 					return true;
 				}
 			}
@@ -288,9 +324,9 @@ monogatari.script ({
 	],
 	'Simp1A': [
 		'show character simp mald at left with bounceIn end-fadeOut',
-		"simp \"@{{player.name}} If exercising basic courtesy to a female makes you a simp, then yeah, I'm a simp\"",
+		"simp \"@{{player.name}} If exercising basic courtesy to a content-creator makes you a 'white knight', then yeah, I'm a 'white knight'\"",
 		'show character simp mald2 at left with headShake end-fadeOut',
-		'simp \"But of course if you are able to live the high life of trust-fund yuppies, you\'re therefore exempt from the simp title\"',
+		'simp \"But of course if you are able to live the high life of trust-fund yuppies, you\'re therefore exempt from the \'Knight\' title\"',
 		'show character simp mald3 at left with shakeY end-fadeOut\"',
 		'simp \"Why am I labelled me a simp for being nice to people.\"',
 		'show character simp mald4 at left with wobble end-fadeOut',
@@ -456,7 +492,18 @@ monogatari.script ({
 				}
 			}
 		},
-
+		{
+			"Function": {
+				"Apply": function(){
+					stat("flags", 1);
+					return true;
+				},
+				"Reverse": function(){
+					stat("flags", -1);
+					return true;
+				}
+			}
+		},
 		'n Your current social credit score is now {{player.stats.social_credit_score}}',
 		'jump Antivax'
 	],
@@ -517,13 +564,25 @@ monogatari.script ({
 		'av "Who are you calling a haggling Schnauzer!"',
 		'p "Respect for others\' as people should take priority and if you feel that they really spreading dangerous opinions, you should voice your disapproval to the moderators would be willing to take action against their platform being known to host untenable uncompromising views which disrupt public safety."',
 		'show character av discontenter',
+		{
+			"Function": {
+				"Apply": function(){
+					stat("flags", 1);
+					return true;
+				},
+				"Reverse": function(){
+					stat("flags", -1);
+					return true;
+				}
+			}
+		},
 		'jump Tree',
 	],
 	'CruiseControl': [
 		'n With the recent devastation caused by the Los Alamos Tsunami crisis, you browse the twitter feeds of the celebrities to gauge whether they are sorry enough for the victims.',
 		'n You find out that Tom Cruise vowed to donate a hefty sum to the cause.',
 		"p \"I've always liked Mission Impossible 1, 2, 3, 4, 5 and 7, though they really are starting to milk the franchise.\" ",
-		"n Interspersed within his tweets of prayers and salisbury steaks, were strange landscapes supposedly from his pilgrimage to the Ethiopian alps. He preaches about the power Scientology grants to its followers.",
+		"n Interspersed within his tweets of prayers and salisbury steaks, were strange landscapes supposedly from his pilgrimage to the Ethiopian alps. He preaches about the power Geometrocology grants to its followers.",
 		"n You feel a chill crawling down your back. You pull the blinders.",
 		"p \"This is Geometrocology? Geometrocology will give me control over my life?\"",
 		"n An itch crawls up your throat, with the insatiable urge to tear it off like a festering blister.",
@@ -556,6 +615,18 @@ monogatari.script ({
 		'p \"...\"',
 		'nipah \"You know what you must do, don\'t you?\"',
 		'show video evisceration fullscreen with close controls',
+		{
+			"Function": {
+				"Apply": function(){
+					stat("flags", 1);
+					return true;
+				},
+				"Reverse": function(){
+					stat("flags", -1);
+					return true;
+				}
+			}
+		},
 		'jump Tree',
 	],
 	'goodEnd': [
@@ -564,6 +635,18 @@ monogatari.script ({
 		'p \"That has-been? I thought she was dead?\"',
 		'nipah \"She is. The living dead.\"',
 		'p \"This is the worst end!\"',
+		{
+			"Function": {
+				"Apply": function(){
+					stat("flags", 1);
+					return true;
+				},
+				"Reverse": function(){
+					stat("flags", -1);
+					return true;
+				}
+			}
+		},
 		'jump Tree',
 	],
 	'Cromartie': [
@@ -650,6 +733,64 @@ monogatari.script ({
 				}
 			}
 		},
+		{
+			"Function": {
+				"Apply": function(){
+					stat("flags", 1);
+					return true;
+				},
+				"Reverse": function(){
+					stat("flags", -1);
+					return true;
+				}
+			}
+		},
 		'jump Tree',
 	],
+	'Ascend' : [
+		'show scene fallout with fadeIn',
+		'p The year is 2040.',
+		'p Climate change and wars over resources have turned the world into a nuclear wasteland.',
+		'p You walk to what remains of the town centre to see if you have secured a spot on the mass evacuation to Mars.',
+		'p You hope to start anew living a simple life maintaining a Martian potato farm and fending off the space-roaches.',
+		'p It would be a hard life, but a beautiful one.',
+		'p You jack into the terminal via neural link and await your response.',
+		'p GENDER: MALE',
+		'p AGE: 35',
+		'p NUMBER OF KIDNEYS: 2',
+		'p SOCIAL CREDIT SCORE: {{player.stats.social_credit_score}}.',
+		'p CALCULATING RESULT...',
+		'p ...',
+		'p ...',
+		'p ...',
+		'n ACCEPTED',
+		'p "This is amazing."',
+		'p "It was thanks to my knowledge on Cyberwellness: Online Interactions as a kid that I was blessed with such a fate."',
+		'n You hear rustling in the bushes',
+		'n You pull out your make-shift habbard, fearing it may be another radioactive mutant land-shark.',
+		'nipah "Woah, woah easy there, bucko."',
+		'n You hear a strangely familiar voice.',
+		'p "Ryan Gosling? I thought you were eaten by the mutant flying Portuguese Man o\' War."',
+		'show scene cruisecontrol with fadeIn',
+		'cruise "No, it\'s me, Tom Cruise."',
+		'p "No way, what are you doing here. You look horrible. And your breath stinks, have you been eating frogs and snakes, without curry powder."',
+		'cruise "N-no, but enough about that. You know why I am here right?"',
+		'p "You mean..."',
+		'cruise "That\'s right, I don\'t say this to everyone but you were always my biggest fan. But I need your help, Sally Struthers took everything from me during the Great Panic of \'22. Lord Xenu has cursed us all."',
+		'p "Sally Struthers? That has-been? I thought she was dead?"',
+		'cruise "She was, until she got bitten by a radioactive land-shark spiders with prehensile thumbs. She has become, the living dead."',
+		'p "We\'re doomed!"',
+		'cruise "Hey snap out of it. Remember what I always said as Nathan Bunt?"',
+		'p \"Ethan Hunt?\"',
+		'cruise \"Yeah whats-his-name. You must not let their guard down for it is those who let their guard down who are most susceptible to the honeyed words of the treacherous fiend.\"',
+		'p \"Aren\'t you the treacherous fiend here?\"',
+		'cruise \"No it\'s a metaphor for the nations all over the world who have failed to abide by the tenets of respecting others online or offline and not inappropriately responding to rabble-rousers and breeding mistrust among humanity in times of crisis. That and Lord Xenu.\"',
+		'cruise \"So please, give me your +1\"',
+		'p "Why?"',
+		'cruise "Tom Cruise will be your bunk buddy on the trans-planetary flight."',
+		'p "And you\'ll read my screenplay?"',
+		'cruise "Yeah whatever. Deal."',
+		'n You now have understood the importance of cultivating values in cyberwellness.',
+		'end',
+	]
 });

@@ -32,9 +32,12 @@ class StatsElement extends Monogatari.Component {
 	 <span>Social Credit Score</span>
 	 <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	 <meter value="100" max="100" data-stat="social_credit_score"></meter>
+	 <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	 <span>Flags</span>
+	 <meter value="0" max="4" data-stat="flags"></meter>
 	 <span></span>
 	 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	 </div>`;   
+	 </div>`;
     }
 }
 
